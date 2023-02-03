@@ -80,6 +80,23 @@ namespace App\Models{
 
 namespace App\Models{
 /**
+ * App\Models\PasswordReset
+ *
+ * @property int $email
+ * @property string $token
+ * @property string|null $created_at
+ * @method static \Illuminate\Database\Eloquent\Builder|PasswordReset newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|PasswordReset newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|PasswordReset query()
+ * @method static \Illuminate\Database\Eloquent\Builder|PasswordReset whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PasswordReset whereEmail($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PasswordReset whereToken($value)
+ */
+	class PasswordReset extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
  * App\Models\Products
  *
  * @property int $id
@@ -192,5 +209,28 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|User whereWeight($value)
  */
 	class User extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * App\Models\homework
+ *
+ * @property int $id
+ * @property string $title
+ * @property string $instruction
+ * @property string $recipient_email
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|homework newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|homework newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|homework query()
+ * @method static \Illuminate\Database\Eloquent\Builder|homework whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|homework whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|homework whereInstruction($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|homework whereRecipientEmail($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|homework whereTitle($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|homework whereUpdatedAt($value)
+ */
+	class homework extends \Eloquent {}
 }
 
