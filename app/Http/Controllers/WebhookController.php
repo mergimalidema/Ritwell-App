@@ -13,7 +13,7 @@ class WebhookController extends Controller
 
         // Only process push events
         if ($payload->event_name === 'push') {
-            $output = shell_exec('cd /path/to/your/repo && git pull origin master 2>&1');
+            $output = shell_exec('cd /var/www/Ritwell-App && git pull origin master 2>&1');
             Log::info("Git pull output: \n" . $output);
         }
 
