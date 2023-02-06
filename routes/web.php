@@ -23,7 +23,7 @@ Route::post('/webhooks/github', function() {
     // Code to handle webhook request and pull changes from Github
     //$output = shell_exec('cd /var/www/Ritwell-App && git pull');
     //Log::info("Git pull output: \n" . $output);
-    exec('cd /var/www/Ritwell-App && git pull', $output, $return_var);
+    exec('cd /var/www/Ritwell-App && git pull https://github.com/mergimalidema/Ritwell-App.git', $output, $return_var);
 
 if ($return_var !== 0) {
     Log::error("Git pull failed with return code: " . $return_var);
