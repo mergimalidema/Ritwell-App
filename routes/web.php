@@ -17,10 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 //Route::post('/webhook', 'WebhookController@handle');
-Route::post('/webhook', [WebhookController::class, 'handle']);
-/*Route::post('/webhooks/github', function() {
+//Route::post('/webhook', [WebhookController::class, 'handle']);
+Route::post('/webhooks/github', function() {
     // Code to handle webhook request and pull changes from Github
-    exec('cd /var/www/Ritwell-App && git pull');
+    shell_exec('cd /var/www/Ritwell-App && git pull origin master 2>&1');
 
-});*/ 
+});
 
