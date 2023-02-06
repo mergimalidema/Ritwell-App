@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WebhookController;
+use Illuminate\Support\Facades\Log;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,7 +21,8 @@ Route::get('/', function () {
 //Route::post('/webhook', [WebhookController::class, 'handle']);
 Route::post('/webhooks/github', function() {
     // Code to handle webhook request and pull changes from Github
-    shell_exec('git pull origin master 2>&1');
+    $output = shell_exec('cd /var/www/Ritwell-App && git pull origin master 2>&1');
+    Log::info("Git pull output: \n" . $output);
 
 });
 
