@@ -7,6 +7,12 @@ use Illuminate\Support\Facades\Log;
 
 class WebhookController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('web')->except(['webhook']);
+        $this->middleware('verified')->only(['webhook']);
+    }
+    
     public function handle(Request $request)
     {
         $payload = json_decode($request->getContent());
