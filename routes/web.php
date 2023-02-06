@@ -21,7 +21,7 @@ Route::get('/', function () {
 //Route::post('/webhook', [WebhookController::class, 'handle']);
 Route::post('/webhooks/github', function() {
     // Code to handle webhook request and pull changes from Github
-    $output = shell_exec('cd /var/www/Ritwell-App && git pull origin master 2>&1');
+    $output = shell_exec('cd /var/www/Ritwell-App && git pull');
     Log::info("Git pull output: \n" . $output);
 
 });
