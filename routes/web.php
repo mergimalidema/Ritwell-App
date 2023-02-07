@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WebhookController;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Artisan;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,6 +30,7 @@ if ($return_var !== 0) {
     Log::error("Git pull failed with return code: " . $return_var);
 } else {
     Log::info("Git pull output: \n" . implode("\n", $output));
+    Artisan::call('optimize');
 }
 
 });
